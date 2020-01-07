@@ -8,7 +8,7 @@ pipeline {
         PROJECT = 'jenkinsdemo'
         IMAGE = 'jenkinsdemo:latest'
         ECRURL = 'http://562864705384.dkr.ecr.us-east-1.amazonaws.com'
-        ECRCRED = 'awskey'
+        ECRCRED = 'ecr:eus-east-1:awskey'
     }
 
     stages {
