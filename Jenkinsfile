@@ -39,7 +39,7 @@ pipeline {
                 script
                 {
                     // Build the docker image using a Dockerfile
-                    docker.build("$IMAGE","562864705384.dkr.ecr.us-east-1.amazonaws.com/jenkinsdemo:latest")
+                    docker.build("$IMAGE","562864705384.dkr.ecr.us-east-1.amazonaws.com")
 //                    docker.build('jenkins/demo')
         //sh "docker build --build-arg APP_NAME=receipts -t 534***385.dkr.ecr.us-east-2.amazonaws.com/bttrm-receipt-consumer:latest -f docker/prod/Dockerfile ."
                 }
