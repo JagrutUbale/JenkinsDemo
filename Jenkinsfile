@@ -40,8 +40,8 @@ pipeline {
                 {
  // Build the docker image using a Dockerfile
  //docker.build("430664767574.dkr.ecr.us-east-1.amazonaws.com/jenkinsdemo:latest")
-                    docker.build("$PROJECT")
-//                    docker.build('jenkins/demo')
+///                    docker.build("$PROJECT")
+                    docker.build('jenkinsdemo')
         //sh "docker build --build-arg APP_NAME=receipts -t 534***385.dkr.ecr.us-east-2.amazonaws.com/bttrm-receipt-consumer:latest -f docker/prod/Dockerfile ."
                 }
             }
@@ -59,7 +59,7 @@ pipeline {
  // Push the Docker image to ECR
                     docker.withRegistry(ECRURL, ECRCRED)
                     {
-                        docker.image(IMAGE).push()
+                        docker.image('jenkinsdemo').push(""$currentBuild.number")
 //                        docker.image(IMAGE).push()
                     }
 
