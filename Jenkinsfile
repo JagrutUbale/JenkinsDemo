@@ -4,6 +4,8 @@
 
         environment 
         {
+            // Always Update ECRURL and ECRCRED with awskey
+            
             VERSION = 'latest'
             PROJECT = 'jenkinsdemo'
             IMAGE = 'jenkinsdemo:latest'
