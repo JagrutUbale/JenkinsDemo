@@ -25,7 +25,12 @@
                         echo "Build preparations"
                         withSonarQubeEnv('sonarqube') {
                             //sh "${scannerHome}/bin/sonar-scanner"
-                            sh "/opt/sonarqube/sonar-scanner/bin/sonar-scanner"
+                            //sh "/opt/sonarqube/sonar-scanner/bin/sonar-scanner"
+                            sh "/opt/sonarqube/sonar-scanner/bin/sonar-scanner \
+  -Dsonar.projectKey=jenkinsdemo \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://localhot:9000 \
+  -Dsonar.login=29013f58a46b678adff090e309c857a8d0afb9d5"
                         }
              
                 }
