@@ -11,6 +11,8 @@
             IMAGE = 'jenkinsdemo:latest'
             ECRURL = 'http://430664767574.dkr.ecr.us-east-1.amazonaws.com'
             ECRCRED = 'ecr:us-east-1:awskey'
+            
+            scannerHome = tool 'SonarQubeScanner'
         }
 
         stages {
@@ -20,10 +22,13 @@
 
                 steps
                 {
-                    script 
-                    {
                         echo "Build preparations"
-                    }
+                        withSonarQubeEnv('sonarqube') {
+                            sh "${scannerHome}/bin/sonar-scanner"
+                        }
+                        timeout(time: 10, unit: 'MINUTES') {
+                            waitForQualityGate abortPipeline: true
+                        }                        
                 }
             }
 
