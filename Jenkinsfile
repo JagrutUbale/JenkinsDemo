@@ -59,7 +59,7 @@ pipeline {
  // Push the Docker image to ECR
                     docker.withRegistry(ECRURL, ECRCRED)
                     {
-                        docker.image('jenkinsdemo').push(""$currentBuild.number")
+                        docker.image('jenkinsdemo').push("$currentBuild.number")
 //                        docker.image(IMAGE).push()
                     }
 
