@@ -24,7 +24,8 @@
                 {
                         echo "Build preparations"
                         withSonarQubeEnv('sonarqube') {
-                            sh "${scannerHome}/bin/sonar-scanner"
+                            //sh "${scannerHome}/bin/sonar-scanner"
+                            sh "/opt/sonarqube/sonar-scanner/bin/sonar-scanner"
                         }
              
                 }
